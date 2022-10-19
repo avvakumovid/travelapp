@@ -100,9 +100,12 @@
   "include": [
     "next-env.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "*.jpg"
   ],
   "exclude": [
-    "node_modules"
+    "node_modules",
+    
   ]
 }
+
