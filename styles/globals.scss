@@ -1,11 +1,12 @@
 @import 'material-icons/iconfont/material-icons.scss';
-  
-  html,
+
+html,
 body {
   padding: 0;
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #161617;
 }
 
 a {
@@ -25,4 +26,21 @@ a {
     color: white;
     background: black;
   }
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+button {
+  cursor: pointer;
+  background-color: transparent;
+}
+
+input,
+button {
+  border: none;
+  outline: none;
 }
