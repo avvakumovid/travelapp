@@ -1,0 +1,42 @@
+@import '../../../../styles/_variable.scss';
+
+.search {
+  display: flex;
+  align-items: center;
+
+  background-color: rgba(255, 255, 255, 0.06);
+  border-radius: 30px;
+  border: 1px solid transparent;
+  transition: .4s ease;
+
+  padding: 0 1rem;
+  margin-bottom: 1.5rem;
+
+  &:focus-within {
+    border-color: rgba($accent, 0.5);
+    >span {
+      // color: rgba($accent, 0.5);
+      font-size: 26px;
+      }
+  }
+
+  > span {
+    margin-right: 10px;
+    color: $white;
+    opacity: 0.8;
+    transition: 0.8s ease;
+    font-size: 23px;
+  }
+  > input {
+    padding: 1rem 0;
+    background-color: transparent;
+    outline: none;
+    font-size: 15px;
+    width: 100%;
+    color: $white;
+
+    &::placeholder {
+      color: #7a787d;
+    }
+  }
+}

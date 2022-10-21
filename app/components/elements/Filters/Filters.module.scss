@@ -1,0 +1,30 @@
+@import '../../../../styles/_variable.scss';
+
+.wrapper {
+
+    display: flex;
+    flex-wrap: wrap;
+
+    align-items: center;
+    justify-content: center;
+
+    >button {
+        padding: 0.5rem 1.5rem;
+        margin: 0 5px 8px 0;
+        border-radius: 30px;
+        border: 2px solid rgba($grey, 0.2);
+        background-color: black;
+        color: $white;
+        min-width: 90px;
+        transition: .4s ease;
+
+    }
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    >button.active {
+        border-color: rgba($accent, 0.5);
+    }
+}

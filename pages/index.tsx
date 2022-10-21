@@ -2,12 +2,23 @@ import { Layout } from '../app/components/common/Layout';
 import React from 'react';
 import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
 import { IPlace } from './../app/types/plcae';
+import HeadingSection from '../app/components/elements/Home/HeadingSection/HeadingSection';
+import Search from '../app/components/elements/Search/Search';
+import Filters from '../app/components/elements/Filters/Filters';
 
 interface IHome {
   places: IPlace[];
 }
 const Home: NextPage<IHome> = ({ places }) => {
-  return <Layout>{places.map(place => place.location)}</Layout>;
+  return (
+    <Layout>
+      <HeadingSection />
+      <div style={{ width: '80%', margin: '0 auto' }}>
+        <Search />
+        <Filters />
+      </div>
+    </Layout>
+  );
 };
 
 export const getStaticProps: GetStaticProps = async () => {
