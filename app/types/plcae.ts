@@ -14,3 +14,7 @@ export interface IPlace {
     googleMapLink: string
     mapImage: string
 }
+
+
+
+

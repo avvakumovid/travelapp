@@ -10,8 +10,8 @@ const places: IPlace[] = [{
     duration: '10',
     googleMapLink: 'link',
     location: {
-        city: 'Japan',
-        country: 'Tokyo'
+        city: 'Tokyo',
+        country: 'Japan'
     },
     mapImage: mapImg.src,
     raiting: 10
