@@ -24,7 +24,7 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
           initialPlaces={initialPlaces}
           setIsLoading={setIsLoading}
         />
-        <Filters setPlaces={setPlaces} />
+        <Filters setPlaces={setPlaces} initialPlaces={initialPlaces} />
         <PopularPlaces
           places={places}
           isLoading={isLoading}

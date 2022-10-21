@@ -4,43 +4,59 @@ import React, { FC, useState } from 'react';
 import { TypeSetState } from '../../../types/common';
 import { IPlace } from '../../../types/plcae';
 
-const cities = [
+const countries = [
   {
-    location: 'Paris',
+    location: 'France',
   },
   {
-    location: 'Bora Bora',
+    location: 'USA',
   },
   {
-    location: 'Maui',
+    location: 'Sweden',
   },
   {
     location: 'Brazil',
   },
   {
-    location: 'Norway',
+    location: 'Italy',
   },
+  { location: 'Japan' },
 ];
 
 interface IFilters {
   setPlaces: TypeSetState<IPlace[]>;
+  initialPlaces: IPlace[];
 }
 
-const Filters: FC<IFilters> = ({ setPlaces }) => {
+const Filters: FC<IFilters> = ({ setPlaces, initialPlaces }) => {
   const [filter, setFilter] = useState('');
+
+  const handleFilter = (country: string) => {
+    if (filter === country) {
+      setFilter('');
+      setPlaces(initialPlaces);
+    } else {
+      setFilter(country);
+      setPlaces(
+        initialPlaces.filter(place => {
+          return place.location.country.toLowerCase() === country.toLowerCase();
+        })
+      );
+    }
+  };
 
   return (
     <div className={styles.wrapper}>
-      {cities.map(city => {
+      {countries.map(country => {
         return (
           <button
             onClick={() => {
-              setFilter(city.location);
+              handleFilter(country.location);
             }}
-            key={city.location}
-            className={cn({ [styles.active]: city.location == filter })}
+            key={country.location}
+            className={cn({ [styles.active]: country.location == filter })}
           >
-            {city.location}
+            {country.location}
           </button>
         );
       })}
