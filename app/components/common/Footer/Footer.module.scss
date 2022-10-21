@@ -5,7 +5,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(13, 13, 14, 0.97);
 
     >nav {
         display: flex;
@@ -21,7 +21,7 @@
                 color: $grey;
                 transition: color .4s ease;
             }
-                
+
             &:hover,
             &.active {
                 >span {
@@ -31,4 +31,3 @@
         }
     }
 }
-
