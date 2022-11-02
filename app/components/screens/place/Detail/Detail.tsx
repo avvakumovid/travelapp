@@ -1,6 +1,6 @@
 import React, { FC } from 'react';
 import styles from './Detail.module.scss';
-import { IPlace } from './../../../../types/plcae';
+import { IPlace } from '@/types/plcae';
 import { FaMapMarkerAlt, FaStar, FaCalendar } from 'react-icons/fa';
 import { Map } from './Map';
 

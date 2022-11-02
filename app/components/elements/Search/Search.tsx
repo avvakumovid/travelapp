@@ -1,7 +1,7 @@
 import React, { ChangeEvent, FC, KeyboardEvent, useState } from 'react';
 import styles from './Search.module.scss';
-import { IPlace } from './../../../types/plcae';
-import { TypeSetState } from '../../../types/common';
+import { IPlace } from '@/types/plcae';
+import { TypeSetState } from '@/types/common';
 
 interface ISearch {
   setPlaces: TypeSetState<IPlace[]>;

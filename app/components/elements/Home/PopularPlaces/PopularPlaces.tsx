@@ -1,11 +1,11 @@
 import React, { FC } from 'react';
 import styles from './PopularPlaces.module.scss';
-import mapImg from '../../../../../assets/images/map.png';
-import { IPlace } from './../../../../types/plcae';
+import mapImg from '@/assets/images/map.png';
+import { IPlace } from '@/types/plcae';
 import Link from 'next/link';
 import Skeleton from 'react-loading-skeleton';
 import 'react-loading-skeleton/dist/skeleton.css';
-import { TypeSetState } from '../../../../types/common';
+import { TypeSetState } from '@/types/common';
 interface IPopularPlaces {
   places: IPlace[];
   isLoading: boolean;

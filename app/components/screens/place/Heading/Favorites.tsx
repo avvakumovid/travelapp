@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react';
 import styles from './Heading.module.scss';
 import { BsBookmarkStar } from 'react-icons/bs';
-import { IFav } from '../../../../types/plcae';
+import { IFav } from '@/types/plcae';
 import Link from 'next/link';
 
 const data: IFav[] = [
