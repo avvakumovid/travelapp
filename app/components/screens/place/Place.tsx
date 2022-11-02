@@ -1,5 +1,5 @@
 import React, { FC } from 'react';
-import { IPlace } from '@/types/plcae';
+import { IPlace } from 'types/plcae';
 import { Layout } from '@/common/Layout';
 import { BookTrip } from './BookTrip/BookTrip';
 import { Detail } from './Detail/Detail';

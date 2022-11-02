@@ -1,5 +1,5 @@
-import { IPlace } from '../../../app/types/plcae';
-import mapImg from '../../../assets/images/map.png'
+import { IPlace } from 'types/plcae';
+import mapImg from 'assets/images/map.png'
 import { NextApiRequest, NextApiResponse } from 'next';
 
 export const places: IPlace[] = [{

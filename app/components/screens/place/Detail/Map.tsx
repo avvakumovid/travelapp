@@ -6,7 +6,7 @@ import {
   Geography,
   ZoomableGroup,
 } from 'react-simple-maps';
-import { TypeLocation } from '../../../../types/plcae';
+import { TypeLocation } from 'types/plcae';
 
 const geoUrl =
   'https://raw.githubusercontent.com/deldersveld/topojson/master/world-countries.json';

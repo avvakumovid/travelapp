@@ -1,8 +1,8 @@
 import styles from './Filters.module.scss';
 import cn from 'classnames';
 import React, { FC, useState } from 'react';
-import { TypeSetState } from '@/types/common';
-import { IPlace } from '@/types/plcae';
+import { TypeSetState } from 'types/common';
+import { IPlace } from 'types/plcae';
 
 const countries = [
   {

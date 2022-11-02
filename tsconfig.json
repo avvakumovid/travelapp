@@ -24,9 +24,9 @@
     // "moduleResolution": "node",                       /* Specify how TypeScript looks up a file from a given module specifier. */
     "baseUrl": "./app/",
     "paths": {
-      "@/components/*": ["/components/*"],
-      "@/screens/*": ["/components/screens/*"],
-      "@/common/*": ["/components/common/*"],
+      "@/components/*": ["components/*"],
+      "@/screens/*": ["components/screens/*"],
+      "@/common/*": ["components/common/*"],
 
       "@/types/*": ["/types/*"],
       "@/styles/*": ["../styles/*"],

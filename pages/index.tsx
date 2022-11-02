@@ -1,7 +1,7 @@
 import { Layout } from '../app/components/common/Layout';
 import React, { useState } from 'react';
 import { GetServerSideProps, GetStaticProps, NextPage } from 'next';
-import { IPlace } from './../app/types/plcae';
+import { IPlace } from 'types/plcae';
 import Search from '../app/components/elements/Search/Search';
 import Filters from '../app/components/elements/Filters/Filters';
 import { API_URL } from './../app/constans';
