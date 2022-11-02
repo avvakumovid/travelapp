@@ -18,7 +18,7 @@ const Home: NextPage<IHome> = ({ initialPlaces }) => {
   return (
     <Layout>
       <HeadingSection />
-      <div style={{ width: '80%', margin: '0 auto' }}>
+      <div style={{ width: '80%', margin: '0 auto', paddingBottom: '100px' }}>
         <Search
           setPlaces={setPlaces}
           initialPlaces={initialPlaces}
@@ -39,7 +39,6 @@ export const getStaticProps: GetStaticProps = async () => {
   const result = await fetch(`${API_URL}/places`);
   const initialPlaces: IPlace[] = await result.json();
 
-  console.log(initialPlaces);
   return {
     props: {
       initialPlaces,

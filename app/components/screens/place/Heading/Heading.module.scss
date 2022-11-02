@@ -1,0 +1,54 @@
+@import '../../../../../styles/variable';
+
+.wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 2rem;
+
+    .buttonWrapper {
+        border-radius: 50%;
+        background-color: rgba(255, 255, 255, 0.05);
+        display: inline-flex;
+        width: 55px;
+        height: 55px;
+        align-items: center;
+        justify-content: center;
+        @include glassEffect;
+    }
+
+    .bookMark {
+        position: relative;
+
+        >ul {
+            position: absolute;
+            border-radius: 15px;
+            background-color: #222223;
+            @include glassEffect;
+            padding: 1rem 0;
+            z-index: 2;
+            top: calc(100% + 10px);
+            right: 0;
+            width: max-content;
+            box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+            animation: opac .4s;
+
+
+            >li {
+                >a {
+                    text-decoration: none;
+                    color: $white;
+                    display: block;
+                    padding: 0.5rem 2rem;
+                    transition: background-color .4s ease-in-out;
+
+                    &:hover {
+                        color: $accent;
+                    }
+                }
+            }
+        }
+    }
+}

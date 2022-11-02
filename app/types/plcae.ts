@@ -1,4 +1,4 @@
-type TypeLocation = {
+export type TypeLocation = {
     city: string;
     country: string;
 }
@@ -15,6 +15,9 @@ export interface IPlace {
     mapImage: string
 }
 
-
+export interface IFav {
+    slug: string,
+    name: string
+}
 
 

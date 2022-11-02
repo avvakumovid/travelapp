@@ -1,0 +1,22 @@
+.wrapper {
+    height: 100%;
+    position: relative;
+    background-position: top center;
+    background-repeat: no-repeat;
+    background-size: 480px 50%;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: rgba(0, 0, 0, 0.6);
+        width: 100%;
+        height: 50%;
+    }
+
+    >div {
+        position: relative;
+        z-index: 1;
+    }
+}
