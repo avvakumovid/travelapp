@@ -3,16 +3,16 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "dev": "concurrently \"next dev\" \"cd studio && sanity start\"",
+    "build": "echo 'Building Sanity to public/studio…' && cd studio && sanity build ../public/studio -y && cd .. && cross-env NODE_ENV=production next build",
+    "start": "next start"
   },
   "dependencies": {
     "classnames": "^2.3.2",
     "lodash": "^4.17.21",
     "material-icons": "^1.12.0",
     "next": "12.3.1",
+    "next-sanity": "^1.0.3",
     "nextjs-progressbar": "^0.0.16",
     "react": "18.2.0",
     "react-dom": "18.2.0",
