@@ -33,7 +33,7 @@ const PopularPlaces: FC<IPopularPlaces> = ({ places, isLoading }) => {
       ) : places.length ? (
         places.map(place => {
           return (
-            <Link key={place.slug} href={`place/${place.slug}`}>
+            <Link key={place._id} href={`place/${place.slug}`}>
               <a
                 className={styles.item}
                 style={{ backgroundImage: `url(${place.imagePath})` }}

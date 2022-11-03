@@ -6,6 +6,7 @@ import { Detail } from './Detail/Detail';
 import { Heading } from './Heading/Heading';
 import styles from './Place.module.scss';
 import { Wrapper } from './Wrapper/Wrapper';
+import Meta from 'utils/Meta';
 
 interface IPlacePage {
   place: IPlace;
@@ -13,6 +14,11 @@ interface IPlacePage {
 export const Place: FC<IPlacePage> = ({ place }) => {
   return (
     <Layout isMaxWidth={false}>
+      <Meta
+        title={`${place.location.city} - ${place.location.country}`}
+        description={`Best routes for travelling - ${place.location.city}`}
+        image={place.imagePath}
+      />
       <Wrapper imagePath={place.imagePath}>
         <div className={styles.wrapper}>
           <Heading />

@@ -3,6 +3,7 @@ import cn from 'classnames';
 import React, { FC, useState } from 'react';
 import { TypeSetState } from 'types/common';
 import { IPlace } from 'types/plcae';
+import uniqBy from 'lodash/uniqBy';
 
 const countries = [
   {
@@ -47,16 +48,19 @@ const Filters: FC<IFilters> = ({ setPlaces, initialPlaces }) => {
 
   return (
     <div className={styles.wrapper}>
-      {countries.map(country => {
+      {uniqBy(initialPlaces, 'location.country').map(place => {
+        const country = place.location.country;
         return (
           <button
             onClick={() => {
-              handleFilter(country.location);
+              handleFilter(country);
             }}
-            key={country.location}
-            className={cn({ [styles.active]: country.location == filter })}
+            key={country}
+            className={cn({
+              [styles.active]: country == filter,
+            })}
           >
-            {country.location}
+            {country}
           </button>
         );
       })}
