@@ -36,7 +36,7 @@ export default {
       name: 'raiting',
       title: 'Raiting',
       type: 'number',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().positive().max(10),
     },
     {
       name: 'imagePath',
@@ -51,19 +51,19 @@ export default {
       name: 'duration',
       title: 'Duration (days)',
       type: 'number',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().positive(),
     },
     {
       name: 'distance',
       title: 'Distance (km.)',
       type: 'number',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().positive(),
     },
     {
       name: 'description',
       title: 'Description',
       type: 'blockContent',
-      validation: Rule => Rule.required(),
+      validation: Rule => Rule.required().positive(),
     },
   ],
 
