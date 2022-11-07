@@ -3,6 +3,7 @@ import styles from './Detail.module.scss';
 import { IPlace } from '@/types/plcae';
 import { FaMapMarkerAlt, FaStar, FaCalendar } from 'react-icons/fa';
 import { Map } from './Map';
+import { PortableText } from 'sanity';
 
 export const Detail: FC<{ place: IPlace }> = ({ place }) => {
   return (
@@ -14,7 +15,7 @@ export const Detail: FC<{ place: IPlace }> = ({ place }) => {
         </h1>
       </div>
 
-      <p>{place.description}</p>
+      <p>{<PortableText value={place.description} />}</p>
 
       <div className={styles.additional}>
         <div className={styles.raitng}>

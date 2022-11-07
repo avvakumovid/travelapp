@@ -34,7 +34,7 @@ const PopularPlaces: FC<IPopularPlaces> = ({ places, isLoading }) => {
       ) : places.length ? (
         places.map(place => {
           return (
-            <Link key={place._id} href={`place/${place.slug}`}>
+            <Link key={place._id} href={`place/${place.slug.current}`}>
               <a
                 className={styles.item}
                 style={{

@@ -7,6 +7,7 @@ import { Heading } from './Heading/Heading';
 import styles from './Place.module.scss';
 import { Wrapper } from './Wrapper/Wrapper';
 import Meta from 'utils/Meta';
+import { urlFor } from './../../../sanity';
 
 interface IPlacePage {
   place: IPlace;
@@ -17,9 +18,9 @@ export const Place: FC<IPlacePage> = ({ place }) => {
       <Meta
         title={`${place.location.city} - ${place.location.country}`}
         description={`Best routes for travelling - ${place.location.city}`}
-        image={place.imagePath}
+        image={urlFor(place.imagePath).url()}
       />
-      <Wrapper imagePath={place.imagePath}>
+      <Wrapper imagePath={urlFor(place.imagePath).url()}>
         <div className={styles.wrapper}>
           <Heading />
           <Detail place={place} />

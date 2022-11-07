@@ -3,6 +3,11 @@ export type TypeLocation = {
     country: string;
 }
 
+export type TypeSlug = {
+    _type: string;
+    current: string
+}
+
 export interface IPlace {
     _id: string
     slug: string
