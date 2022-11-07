@@ -26,13 +26,18 @@ export const Auth = () => {
       if (res.error) {
         toast.error(res.error);
       } else {
-        toast.success('res');
+        toast.success('Reg');
       }
     } else {
-      await signIn('sanity-login', {
+      const res = await signIn('sanity-login', {
         redirect: false,
         ...data,
       });
+      if (res.error) {
+        toast.error(res.error);
+      } else {
+        toast.success('Log');
+      }
     }
   };
 

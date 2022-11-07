@@ -12,7 +12,7 @@ function MyApp({ Component, pageProps }: any) {
         height={3}
       />
       <Component {...pageProps} />
-      <ToastContainer theme={'dark'} />
+      <ToastContainer theme={'dark'} draggable={false} />
     </>
   );
 }
