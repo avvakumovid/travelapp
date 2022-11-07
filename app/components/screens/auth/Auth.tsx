@@ -8,9 +8,10 @@ import stylesButton from '../place/BookTrip/BookTrip.module.scss';
 import { signUp } from 'next-auth-sanity/client';
 import { toast } from 'react-toastify';
 import { signIn } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 export const Auth = () => {
-  const [typeForm, setTypeForm] = useState<'login' | 'register'>('register');
+  const [typeForm, setTypeForm] = useState<'login' | 'register'>('login');
 
   const {
     handleSubmit,
@@ -20,11 +21,13 @@ export const Auth = () => {
     mode: 'onChange',
   });
 
+  const { push } = useRouter();
+
   const onSubmit: SubmitHandler<IAuthFields> = async data => {
     if (typeForm === 'register') {
       const res = await signUp(data);
-      if (res.error) {
-        toast.error(res.error);
+      if (res?.error) {
+        toast.error(res?.error);
       } else {
         toast.success('Reg');
       }
@@ -33,10 +36,11 @@ export const Auth = () => {
         redirect: false,
         ...data,
       });
-      if (res.error) {
-        toast.error(res.error);
+      if (res?.error) {
+        toast.error(res?.error);
+        return;
       } else {
-        toast.success('Log');
+        await push('/');
       }
     }
   };
@@ -70,7 +74,7 @@ export const Auth = () => {
           )}
         </div>
         <div className={styles.wrapper}>
-          <button className={stylesButton.button}>
+          <button className={stylesButton.button} type='submit'>
             <span className={stylesButton.text}>
               {typeForm === 'register' ? 'Register' : 'Login'}
             </span>
@@ -81,6 +85,7 @@ export const Auth = () => {
         </div>
         <div className={styles.wrapper}>
           <button
+            type='button'
             className={styles.changeType}
             onClick={() => {
               setTypeForm(typeForm === 'register' ? 'login' : 'register');
