@@ -1,4 +1,5 @@
-import { createClient, createPreviewSubscriptionHook } from 'next-sanity';
+import { ClientConfig, createPreviewSubscriptionHook } from 'next-sanity';
+import createClient from '@sanity/client';
 import createImageUrlBuilder from '@sanity/image-url';
 import { PortableText as PortableTextComponent } from '@portabletext/react';
 
@@ -7,6 +8,7 @@ const config = {
   dataset: 'production',
   apiVersion: '2021-10-21',
   useCdn: false,
+  token: process.env.SANITY_API_TOKEN,
 };
 
 export const sanityClient = createClient(config);

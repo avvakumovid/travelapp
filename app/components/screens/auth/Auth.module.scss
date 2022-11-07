@@ -1,0 +1,62 @@
+@import '../../../../styles/_variable.scss';
+
+
+.heading {
+    color: $white;
+    text-align: center;
+    padding: 3rem 0;
+    font-size: 1.7em;
+}
+
+
+.wrapper {
+
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+
+
+    .input {
+        display: flex;
+        align-items: center;
+        @include glassEffect;
+
+        width: 80%;
+        outline: none;
+
+        color: $white;
+
+        border-radius: 30px;
+        border: 1px solid transparent;
+        transition: .4s ease;
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+
+        &:focus {
+            border-color: rgba($accent, 0.5);
+
+        }
+
+        &::placeholder {
+            color: #7a787d;
+        }
+
+
+    }
+}
+
+.error {
+    color: red;
+    position: absolute;
+    font-size: 15px;
+    // left: 0
+}
+
+.changeType {
+    // display: block;
+    margin-top: 1rem;
+    color: #7a787d;
+
+}
