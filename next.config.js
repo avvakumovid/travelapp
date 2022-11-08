@@ -1,20 +1,23 @@
-/** @type {import('next').NextConfig} */
+const withPWA = require('next-pwa')({
+  dest: 'public',
+});
 
 const STUDIO_REWRITE = {
   source: '/studio/:path*',
   destination:
     process.env.NODE_ENV === 'development'
-      ? 'http://localhost:3333/studio/:path'
-      : '/studio/index.html',
+      ? 'http://localhost:3333/studio/:path*'
+      : '/travelapp/index.html',
 };
 
-const nextConfig = {
-  reactStrictMode: true,
+module.exports = withPWA({
   swcMinify: true,
+  reactStrictMode: true,
   env: {
     APP_URL: 'http://localhost:3000',
   },
   rewrites: () => [STUDIO_REWRITE],
-};
-
-module.exports = nextConfig;
+  images: {
+    domains: ['cdn.sanity.io'],
+  },
+});

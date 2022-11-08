@@ -15,15 +15,15 @@ const navItems: TypeNavItem[] = [
     link: '/',
   },
   {
-    icon: 'explore',
-    link: '/explore',
+    icon: 'favorite_outline',
+    link: '/favorites',
   },
   {
-    icon: 'place',
-    link: '/place/kyoto',
+    icon: 'account_circle',
+    link: '/profile',
   },
   {
-    icon: 'person_outline',
+    icon: 'logout',
     link: '/auth',
   },
 ];
@@ -45,9 +45,7 @@ const Footer = () => {
                 else push(item.link);
               }}
             >
-              <span className='material-icons-outlined'>
-                {item.link != '/auth' ? item.icon : data ? 'logout' : item.icon}
-              </span>
+              <span className='material-icons-outlined'>{item.icon}</span>
             </button>
           ))
         ) : (

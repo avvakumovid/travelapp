@@ -15,7 +15,7 @@ export const Detail: FC<{ place: IPlace }> = ({ place }) => {
         </h1>
       </div>
 
-      <p>{<PortableText value={place.description} />}</p>
+      <PortableText value={place.description} />
 
       <div className={styles.additional}>
         <div className={styles.raitng}>

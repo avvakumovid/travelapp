@@ -26,7 +26,9 @@ export const Auth = () => {
   const onSubmit: SubmitHandler<IAuthFields> = async data => {
     if (typeForm === 'register') {
       const res = await signUp(data);
+      //@ts-ignore
       if (res?.error) {
+        //@ts-ignore
         toast.error(res?.error);
       } else {
         toast.success('Reg');
@@ -47,7 +49,7 @@ export const Auth = () => {
 
   return (
     <Layout>
-      <h1 className={styles.heading}>
+      <h1 className='heading'>
         {typeForm === 'register' ? 'Register' : 'Login'}
       </h1>
       <form onSubmit={handleSubmit(onSubmit)}>

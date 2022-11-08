@@ -1,43 +1,21 @@
 import React, { FC, useState } from 'react';
 import styles from './Heading.module.scss';
-import { BsBookmarkStar } from 'react-icons/bs';
+import { TbHeartMinus, TbHeartPlus } from 'react-icons/tb';
+//@ts-ignore
 import { IFav } from '@/types/plcae';
 import Link from 'next/link';
+import { useFavorites } from '../../favorites/useFavorites';
+import { useDocumentOperation } from '@sanity/react-hooks';
 
-const data: IFav[] = [
-  { slug: 'Rome', name: 'Italy, Rome' },
-  { slug: 'Rome', name: 'Italy, Rome' },
-  { slug: 'Tokyo', name: 'Japan, Toky' },
-  { slug: 'Tokyo', name: 'Japan, Toky' },
-];
-
-export const Favorites: FC = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
+export const Favorites: FC<{ _id: string }> = ({ _id }) => {
+  const { checkFavorite, toggleFavorite, isLoading } = useFavorites(_id);
   return (
     <div className={styles.bookMark}>
-      <button
-        onClick={() => {
-          setIsOpen(prev => !prev);
-        }}
-      >
+      <button onClick={toggleFavorite} disabled={isLoading}>
         <span className={styles.buttonWrapper}>
-          <BsBookmarkStar color='#e8e8e8' size={20} />
+          {checkFavorite(_id) ? <TbHeartMinus /> : <TbHeartPlus />}
         </span>
       </button>
-      {isOpen && (
-        <ul>
-          {data.map(fav => {
-            return (
-              <li key={fav.slug}>
-                <Link href={`place/${fav.slug}`}>
-                  <a>{fav.name}</a>
-                </Link>
-              </li>
-            );
-          })}
-        </ul>
-      )}
     </div>
   );
 };

@@ -22,7 +22,7 @@ export const Place: FC<IPlacePage> = ({ place }) => {
       />
       <Wrapper imagePath={urlFor(place.imagePath).url()}>
         <div className={styles.wrapper}>
-          <Heading />
+          <Heading _id={place._id} />
           <Detail place={place} />
           <BookTrip />
         </div>
